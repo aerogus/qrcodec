@@ -23,4 +23,6 @@ python3 ./app/server.py
 
 Allez sur http://127.0.0.1 et uploader l'image
 
+![qrcode](qrcode.jpg)
+
 ![capture](screenshot.png)
