@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>vacdec</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/app.css">
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>Décodeur de QR Code</h1>
+      <form method="POST" action="cgi-bin/upload.py" id="passform" enctype="multipart/form-data">
+        <div>
+          <label>Glissez le fichier .png,.gif,.jpg de votre Code QR</label>
+          <input type="file" id="pass" name="pass" required accept=".jpg,.jpeg,.png,.gif">
+        </div>
+        <div>
+          <input type="submit" value="Envoyer">
+        </div>
+      </form>
+      <div id="results_wrapper">
+          <h2>Résultats</h2>
+          <pre id="results"></pre>
+      </div>
+    </div>
+    <footer>
+      <ul>
+        <li><a href="https://github.com/aerogus/qrdecode">Code Source</a></li>
+      </ul>
+    </footer>
+    <script type="module">
+      import {init} from './js/app.mjs';
+      document.addEventListener('DOMContentLoaded', () => {
+        init();
+      });
+    </script>
+  </body>
+</html>
