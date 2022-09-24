@@ -10,7 +10,7 @@ Il prend la forme d'une application web qui accepte un upload d'image (.jpg,.png
 
 ## Usage
 
-Via Docker, pour instancier le conteneur après avoir contruit l'image `qrdecode` :
+Via Docker, pour instancier le conteneur après avoir construit l'image `qrdecode` :
 
 ```bash
 docker run -p 80:80 --name qrdecode --rm -it $(docker build --tag qrcdecode --quiet .)
@@ -36,4 +36,4 @@ L'interface
 ## Ressources
 
 - https://fr.wikipedia.org/wiki/Code_QR
-
+- https://cpu.dascritch.net/post/2022/09/22/Ex0193-Datamatrix,-QR-code-et-autres-damiers
