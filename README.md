@@ -37,3 +37,4 @@ L'interface
 
 - https://fr.wikipedia.org/wiki/Code_QR
 - https://cpu.dascritch.net/post/2022/09/22/Ex0193-Datamatrix,-QR-code-et-autres-damiers
+- https://note.nkmk.me/en/python-pyzbar-barcode-qrcode/

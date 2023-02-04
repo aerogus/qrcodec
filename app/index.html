@@ -8,21 +8,43 @@
     <link rel="stylesheet" href="/css/app.css">
   </head>
   <body>
-    <div id="wrapper">
+
+    <div style="display: flex">
+    <div class="wrapper">
       <h1>Décodeur de code QR</h1>
-      <form method="POST" action="cgi-bin/upload.py" id="passform" enctype="multipart/form-data">
+      <form method="POST" action="cgi-bin/decode.py" id="decode-form" enctype="multipart/form-data">
         <div>
-          <label>Glissez ici une image .jpg, .gif ou ..png d'un code QR</label>
-          <input type="file" id="pass" name="pass" required accept=".jpg,.jpeg,.png,.gif">
+          <label for="img">Glissez ici une image .jpg, .gif ou ..png d'un code QR</label>
         </div>
         <div>
-          <input type="submit" value="Envoyer">
+          <input type="file" id="img" name="img" required accept=".jpg,.jpeg,.png,.gif">
+        </div>
+        <div>
+          <input type="submit" value="Décoder l'image">
         </div>
       </form>
-      <div id="results_wrapper">
-          <h2>Résultats</h2>
-          <pre id="results"></pre>
-      </div>
+    </div>
+
+    <div class="wrapper">
+      <h1>Encodeur de code QR</h1>
+      <form method="POST" action="cgi-bin/encode.py" id="encode-form">
+        <div>
+          <label for="content">Saisissez une url ou un texte</label>
+        </div>
+        <div>
+          <textarea id="content" name="content" required></textarea>
+        </div>
+        <div>
+          <input type="submit" value="Encoder le texte">
+        </div>
+      </form>
+    </div>
+    </div>
+
+    <div id="results_wrapper" class="wrapper">
+      <h1>Résultat</h1>
+      <pre id="results"></pre>
+    </div>
     </div>
     <footer>
       <ul>
@@ -31,9 +53,7 @@
     </footer>
     <script type="module">
       import {init} from './js/app.mjs';
-      document.addEventListener('DOMContentLoaded', () => {
-        init();
-      });
+      document.addEventListener('DOMContentLoaded', init());
     </script>
   </body>
 </html>

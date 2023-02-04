@@ -1,14 +1,13 @@
 'use strict';
 
 function init() {
-  console.log('init');
 
-  document.getElementById('passform').addEventListener('submit', async function (e) {
+  // décodage de l'image
+  document.getElementById('decode-form').addEventListener('submit', async function (e) {
     e.preventDefault();
-    console.log('submit');
     let formData = new FormData();
-    formData.append('pass', pass.files[0]);
-    await fetch('/cgi-bin/upload.py', {
+    formData.append('img', img.files[0]);
+    await fetch('/cgi-bin/decode.py', {
       method: "POST",
       body: formData
     }).then((response) => {
@@ -18,6 +17,23 @@ function init() {
       });
     });
   });
+
+  // encodage du contenu
+  document.getElementById('encode-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    let formData = new FormData();
+    formData.append('content', content.value);
+    await fetch('/cgi-bin/encode.py', {
+      method: "POST",
+      body: formData
+    }).then((response) => {
+      response.text().then((data) => {
+        document.getElementById('results_wrapper').style.display = 'block';
+        document.getElementById('results').innerHTML = data;
+      });
+    });
+  });
+
 }
 
 export {init};
