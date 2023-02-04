@@ -1,6 +1,6 @@
-# qrdecode
+# qrcodec
 
-Service web de décodage d'un code QR
+Service web de codage et décodage d'un code QR
 
 On rencontre de nos jours de plus en plus de codes QR dans les magazines, les flyers, et même notre carte électorale ! Il y a bien des logiciels lecteurs prêts à l'emploi dans nos téléphone mais sait-on réellement ce qu'ils font exactement ? Afin de démystifier tout cela, et de façon libre, ouverte et auditable (bref un logiciel libre), voici ce mini projet.
 
@@ -8,12 +8,14 @@ Il prend la forme d'une application web qui accepte un upload d'image (.jpg,.png
 
 À noter que ce projet est un sous ensemble du projet [vacdec](https://github.com/aerogus/vacdec) où ce dernier fait en plus le décodage du [certificat Covid européen](https://fr.wikipedia.org/wiki/Passe_sanitaire_europ%C3%A9en)
 
+Mise à jour 2023 : un encodeur de codes QR, comme ça la boucle est bouclée.
+
 ## Usage
 
-Via Docker, pour instancier le conteneur après avoir construit l'image `qrdecode` :
+Via Docker, pour instancier le conteneur après avoir construit l'image `qrcodec` :
 
 ```bash
-docker run -p 80:80 --name qrdecode --rm -it $(docker build --tag qrcdecode --quiet .)
+docker run -p 80:80 --name qrcodec --rm -it $(docker build --tag qrcodec --quiet .)
 ```
 
 ou directement via l'interpréteur `python3`. La seule dépendance est la bibliothèque `zbar`
