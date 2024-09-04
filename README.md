@@ -22,6 +22,8 @@ ou directement via l'interpréteur `python3`. La seule dépendance est la biblio
 
 ```
 $ brew install zbar
+$ python3 -m venv venv
+$ . venv/bin/activate
 $ pip3 install -r requirements.txt
 $ python3 ./app/server.py
 Serveur actif sur le port : 80
