@@ -16,6 +16,7 @@ if fileitem.filename:
   img = PIL.Image.open(io.BytesIO(fileitem.file.read()))
   data = pyzbar.pyzbar.decode(img)
   print('type:')
+  print(data[0])
   print(data[0].type)
   print('')
 
